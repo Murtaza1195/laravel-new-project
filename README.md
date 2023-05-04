@@ -64,3 +64,26 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## project idea 
+1.user can create a new help ticket 
+2.Admin can reply on help ticket 
+3.Admin can reject or resolve ticket 
+4.When the admin update the ticket user recieve the notification via email 
+5.user can give ticket title and description 
+6.user can upload a document like pdf and image 
+
+### Table structure
+1.Tickets
+- Title(string) {required }
+- description(Text) {required }
+- status (open {default} , resolved , rejected )
+- attachment (string) {nullable}
+-user-id  filled by laravel 
+- status_changed_by_id {nullable}
+
+2. Replies
+- body(text) {required}
+- user-id {required} filled by laravel
+- ticket-id {required } filled by laravel 
