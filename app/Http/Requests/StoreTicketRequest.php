@@ -11,7 +11,8 @@ class StoreTicketRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        //it's always true for authentic user
+        return true;
     }
 
     /**
@@ -23,6 +24,9 @@ class StoreTicketRequest extends FormRequest
     {
         return [
             //
+         'title' => ['required' , 'string'],
+         'description' => ['required' , 'string'],
+         'attachment' => ['sometimes' , 'file'],
         ];
     }
 }
